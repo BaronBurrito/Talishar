@@ -800,6 +800,9 @@ function SpecificCardLogic($player, $card, $lastResult, $initiator)
         AddDecisionQueue("MZBOTTOM", $player, "-", 1);
       }
       return $lastResult;
+    case "CHAINREACTION":
+      AddCurrentTurnEffect("HNT253-" . $lastResult, $player, uniqueID: $params[1]);
+      return $lastResult;
     default: return "";
   }
 
